@@ -1,6 +1,7 @@
 #!/bin/sh
 
-basedir=/www/cron/restart/
+cd `dirname $0`
+basedir=`pwd`
 
 logger()
 {
