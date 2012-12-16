@@ -1,3 +1,4 @@
 #!/bin/sh
 
-/www/cron/restart/core.sh "httpd" "sudo /etc/init.d/httpd restart"
+cd `dirname $0`
+./core.sh "httpd" "sudo /etc/init.d/httpd restart"

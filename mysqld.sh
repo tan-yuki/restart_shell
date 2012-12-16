@@ -1,3 +1,4 @@
 #!/bin/sh
 
-/www/cron/restart/core.sh "mysqld" "sudo /etc/init.d/mysqld restart"
+cd `dirname $0`
+./core.sh "mysqld" "sudo /etc/init.d/mysqld restart"
