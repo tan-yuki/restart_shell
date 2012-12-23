@@ -16,10 +16,11 @@ if [ "${mail_to}" = "" ]; then
   exit 1
 fi
 
+
 process_name=$1
 restart_command=$2
 
-ps_count=`ps auxwww | grep ${process_name} | grep -v grep | grep -v ${basedir} | wc -l`
+ps_count=`ps auxwww | grep ${process_name} | grep -v grep | grep -v ${basedir} | grep -v "$0" | wc -l`
 
 if [ ${ps_count} -eq 0 ]; then
   logger "Stopped ${process_name} process. Start restarting"
@@ -36,8 +37,4 @@ if [ ${ps_count} -eq 0 ]; then
   exit 1
 fi
 
-logger "Process remain..."
 exit 0
-
-
-
